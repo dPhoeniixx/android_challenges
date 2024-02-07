@@ -1,6 +1,8 @@
 # Android Trigger
 A plugin designed for Android challenges in CTFd enables players to automatically triage challenges, particularly those that require the installation of a hostile exploit application on the victim device to exploit the vulnerability. This plugin seamlessly integrates with Genymotion Cloud to provide emulator instances.
 
+The plugin was originally developed for @0xL4ugh CTF.
+
 ## Table of Contents
 - [Workflow](#workflow)
 - [Installation](#installation)
