@@ -73,8 +73,8 @@ def getEmulator(id):
     return jsonify(GenymotionEmulator.query.options(sqlalchemy.orm.defer(GenymotionEmulator.password)).all()), 200
 
 
-# @during_ctf_time_only
-# @require_verified_emails
+@during_ctf_time_only
+@require_verified_emails
 @plugin_blueprint.route('/api/v1/androidTrigger/install', methods=['POST'])
 def install():
     user_id = session.get("id", -1)
@@ -139,8 +139,8 @@ def install():
                          {'session_lifetime': challenge.install_time}), 200
 
 
-# @during_ctf_time_only
-# @require_verified_emails
+@during_ctf_time_only
+@require_verified_emails
 @plugin_blueprint.route('/api/v1/androidTrigger/launch', methods=['POST'])
 def launchApp():
     user_id = session.get("id", -1)
