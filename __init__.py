@@ -11,8 +11,8 @@ from CTFd.plugins.migrations import upgrade
 # Depends on dynamic_challenges plugin
 
 class AndroidValueChallenge(BaseChallenge):
-    id = "android"  # Unique identifier used to register challenges
-    name = "android"  # Name of a challenge type
+    id = "Android"  # Unique identifier used to register challenges
+    name = "Android Auto-triage"  # Name of a challenge type
     templates = (
         {  # Handlebars templates used for each aspect of challenge editing & viewing
             "create": "/plugins/android_challenges/src/assets/create.html",
@@ -77,7 +77,7 @@ class AndroidValueChallenge(BaseChallenge):
         data = request.form or request.get_json()
 
         for attr, value in data.items():
-            # We need to set these to floats so that the next operations don't operate on strings
+            # We need to set these to int so that the next operations don't operate on strings
             if attr in ("max_file_size", "install_time", "launch_time"):
                 value = int(value)
             setattr(challenge, attr, value)
