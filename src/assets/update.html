@@ -1,0 +1,39 @@
+{% extends "admin/challenges/update.html" %}
+
+{% block value %}
+<div class="form-group">
+	<label for="value">Package ID<br>
+		<small class="form-text text-muted">
+			The package ID of the targeted Android application.
+		</small>
+	</label>
+	<input type="text" class="form-control" name="package_id" placeholder="com.example.org" value="{{ challenge.package_id }}" required>
+</div>
+
+<div class="form-group">
+	<label for="value">Max File Size<br>
+		<small class="form-text text-muted">
+			The maximum file size for the exploit APK to be uploaded.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="max_file_size" placeholder="7 * 1024 * 1024" value="{{ challenge.max_file_size }}" required>
+</div>
+
+<div class="form-group">
+	<label for="value">Session Timeout (After installation)<br>
+		<small class="form-text text-muted">
+			The timeout, in seconds, before ending the session, closing, and uninstalling the application from the emulator.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="install_time" placeholder="10" value="{{ challenge.install_time }}" required>
+</div>
+
+<div class="form-group">
+	<label for="value">Launch Extra Timeout<br>
+		<small class="form-text text-muted">
+			The additional time being added to the session timeout when the player launches the application.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="launch_time" placeholder="20" value="{{ challenge.launch_time }}" required>
+</div>
+{% endblock %}

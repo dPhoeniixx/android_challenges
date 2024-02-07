@@ -1,0 +1,62 @@
+{% extends "admin/challenges/create.html" %}
+
+{% block header %}
+<div class="alert alert-secondary" role="alert">
+	Dynamic value challenges decrease in value as they receive solves. The more solves a dynamic challenge has,
+	the lower its value is to everyone who has solved it.
+</div>
+{% endblock %}
+
+
+{% block value %}
+<div class="form-group">
+	<label>
+		Value:<br>
+		<small class="form-text text-muted">
+			This is how many points are rewarded for solving this challenge.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="value" placeholder="Enter value" required>
+</div>
+
+<div class="form-group">
+	<label for="value">Package ID<br>
+		<small class="form-text text-muted">
+			The package ID of the targeted Android application.
+		</small>
+	</label>
+	<input type="text" class="form-control" name="package_id" placeholder="com.example.org" required>
+</div>
+
+
+<div class="form-group">
+	<label for="value">Max File Size<br>
+		<small class="form-text text-muted">
+			The maximum file size for the exploit APK to be uploaded.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="max_file_size" placeholder="7 * 1024 * 1024" required>
+</div>
+
+<div class="form-group">
+	<label for="value">Session Timeout (After installation)<br>
+		<small class="form-text text-muted">
+			The timeout, in seconds, before ending the session, closing, and uninstalling the application from the emulator.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="install_time" placeholder="10" required>
+</div>
+
+<div class="form-group">
+	<label for="value">Launch Extra Timeout<br>
+		<small class="form-text text-muted">
+			The additional time being added to the session timeout when the player launches the application.
+		</small>
+	</label>
+	<input type="number" class="form-control" name="launch_time" placeholder="20" required>
+</div>
+{% endblock %}
+
+{% block type %}
+<input type="hidden" value="android" name="type" id="chaltype">
+{% endblock %}
