@@ -40,5 +40,3 @@ The CTF operator can add a new Android challenge from the Admin Panel, with the 
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
-**Developed through the power of Allah ﷻ by his servant, Sayed Abdelhafiz.**
