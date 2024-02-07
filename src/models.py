@@ -7,9 +7,9 @@ from dataclasses import dataclass
 @dataclass
 class GenymotionEmulator(db.Model):
     id = db.Column('id', db.Integer, primary_key=True)
-    url = db.Column('url', db.String)
-    username = db.Column('username', db.String)
-    password = db.Column('password', db.String)
+    url = db.Column('url', db.String(255))
+    username = db.Column('username', db.String(100))
+    password = db.Column('password', db.String(100))
     verify_ssl = db.Column('verify_ssl', db.Boolean)
 
     session = db.relationship('EmulatorSession', uselist=False, back_populates="emulator")
@@ -51,7 +51,7 @@ class AndroidChallenge(Challenges):
     id = db.Column(
         db.Integer, db.ForeignKey("challenges.id", ondelete="CASCADE"), primary_key=True
     )
-    package_id = db.Column('package_id', db.String)
+    package_id = db.Column('package_id', db.String(255))
     max_file_size = db.Column('max_file_size', db.Integer)
     install_time = db.Column('install_time', db.Integer)
     launch_time = db.Column('launch_time', db.Integer)

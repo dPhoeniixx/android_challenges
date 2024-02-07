@@ -90,6 +90,7 @@ function emulatorConfigModal(id = null) {
             },
             success: function(data) {
                 alertify.notify(id ? 'Entry updated successfully.' : 'Entry created successfully.', 'success', 5, function() {
+                    window.location.href = window.location.href;
                     console.log('dismissed');
                 })
             }
@@ -109,6 +110,7 @@ function deleteEmulator(id) {
         },
         success: function(data) {
             alertify.notify('Deleted', 'success', 5, function() {
+                window.location.href = window.location.href;
                 console.log('dismissed');
             })
         }

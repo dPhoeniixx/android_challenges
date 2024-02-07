@@ -91,6 +91,7 @@ class AndroidValueChallenge(BaseChallenge):
 
 
 def load(app):
+    app.db.create_all()
     upgrade(plugin_name="android_challenges")
     CHALLENGE_CLASSES["android"] = AndroidValueChallenge
     app.register_blueprint(plugin_blueprint)
