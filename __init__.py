@@ -11,7 +11,7 @@ from CTFd.plugins.migrations import upgrade
 # Depends on dynamic_challenges plugin
 
 class AndroidValueChallenge(BaseChallenge):
-    id = "Android"  # Unique identifier used to register challenges
+    id = "android"  # Unique identifier used to register challenges
     name = "Android Auto-triage"  # Name of a challenge type
     templates = (
         {  # Handlebars templates used for each aspect of challenge editing & viewing
